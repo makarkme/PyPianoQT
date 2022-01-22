@@ -1,0 +1,1191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1075</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1075</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>PyPianoQT</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: black</string>
+   </property>
+   <widget class="QPushButton" name="a">
+    <property name="geometry">
+     <rect>
+      <x>-11</x>
+      <y>170</y>
+      <width>81</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="sizeIncrement">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="baseSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cramaten</family>
+      <pointsize>26</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: white;
+	font: 26pt &quot;Cramaten&quot;;
+	font: 26pt &quot;Cramaten&quot;;
+	border: 1px solid white;
+	border-radius: 5;
+	color: black;
+}
+
+QPushButton:pressed {
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 5
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>16</width>
+      <height>16</height>
+     </size>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup_keys</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="b">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>167</y>
+      <width>40</width>
+      <height>340</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cramaten</family>
+      <pointsize>26</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: black;
+	font: 16pt &quot;Cramaten&quot;;
+	font: 20pt &quot;Cramaten&quot;;
+	font: 20pt &quot;Cramaten&quot;;
+	font: 26pt &quot;Cramaten&quot;;
+	border: 1px solid black;
+	border-radius: 5;
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 5
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup_keys</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="c">
+    <property name="geometry">
+     <rect>
+      <x>75</x>
+      <y>170</y>
+      <width>70</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: white;
+	font: 26pt &quot;Cramaten&quot;;
+	font: 26pt &quot;Cramaten&quot;;
+	border: 1px solid white;
+	border-radius: 5;
+	color: black;
+}
+
+QPushButton:pressed {
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 5
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup_keys</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="d">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>170</y>
+      <width>70</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: white;
+	font: 26pt &quot;Cramaten&quot;;
+	font: 26pt &quot;Cramaten&quot;;
+	border: 1px solid white;
+	border-radius: 5;
+	color: black;
+}
+
+QPushButton:pressed {
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 5
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup_keys</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="e">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>167</y>
+      <width>40</width>
+      <height>340</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cramaten</family>
+      <pointsize>26</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: black;
+	font: 16pt &quot;Cramaten&quot;;
+	font: 20pt &quot;Cramaten&quot;;
+	font: 20pt &quot;Cramaten&quot;;
+	font: 26pt &quot;Cramaten&quot;;
+	border: 1px solid black;
+	border-radius: 5;
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 5
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup_keys</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="f">
+    <property name="geometry">
+     <rect>
+      <x>225</x>
+      <y>170</y>
+      <width>70</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: white;
+	font: 26pt &quot;Cramaten&quot;;
+	font: 26pt &quot;Cramaten&quot;;
+	border: 1px solid white;
+	border-radius: 5;
+	color: black;
+}
+
+QPushButton:pressed {
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 5
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup_keys</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="g">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>167</y>
+      <width>40</width>
+      <height>340</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cramaten</family>
+      <pointsize>26</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: black;
+	font: 16pt &quot;Cramaten&quot;;
+	font: 20pt &quot;Cramaten&quot;;
+	font: 20pt &quot;Cramaten&quot;;
+	font: 26pt &quot;Cramaten&quot;;
+	border: 1px solid black;
+	border-radius: 5;
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 5
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup_keys</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="h">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>170</y>
+      <width>70</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: white;
+	font: 26pt &quot;Cramaten&quot;;
+	font: 26pt &quot;Cramaten&quot;;
+	border: 1px solid white;
+	border-radius: 5;
+	color: black;
+}
+
+QPushButton:pressed {
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 5
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup_keys</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="i">
+    <property name="geometry">
+     <rect>
+      <x>375</x>
+      <y>170</y>
+      <width>70</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: white;
+	font: 26pt &quot;Cramaten&quot;;
+	font: 26pt &quot;Cramaten&quot;;
+	border: 1px solid white;
+	border-radius: 5;
+	color: black;
+}
+
+QPushButton:pressed {
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 5
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup_keys</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="j">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>167</y>
+      <width>40</width>
+      <height>340</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cramaten</family>
+      <pointsize>26</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: black;
+	font: 16pt &quot;Cramaten&quot;;
+	font: 20pt &quot;Cramaten&quot;;
+	font: 20pt &quot;Cramaten&quot;;
+	font: 26pt &quot;Cramaten&quot;;
+	border: 1px solid black;
+	border-radius: 5;
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 5
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup_keys</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="k">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>170</y>
+      <width>70</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: white;
+	font: 26pt &quot;Cramaten&quot;;
+	font: 26pt &quot;Cramaten&quot;;
+	border: 1px solid white;
+	border-radius: 5;
+	color: black;
+}
+
+QPushButton:pressed {
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 5
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup_keys</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="l">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>167</y>
+      <width>40</width>
+      <height>340</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cramaten</family>
+      <pointsize>26</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: black;
+	font: 16pt &quot;Cramaten&quot;;
+	font: 20pt &quot;Cramaten&quot;;
+	font: 20pt &quot;Cramaten&quot;;
+	font: 26pt &quot;Cramaten&quot;;
+	border: 1px solid black;
+	border-radius: 5;
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 5
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup_keys</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="m">
+    <property name="geometry">
+     <rect>
+      <x>525</x>
+      <y>170</y>
+      <width>70</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: white;
+	font: 26pt &quot;Cramaten&quot;;
+	font: 26pt &quot;Cramaten&quot;;
+	border: 1px solid white;
+	border-radius: 5;
+	color: black;
+}
+
+QPushButton:pressed {
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 5
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup_keys</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="n">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>167</y>
+      <width>40</width>
+      <height>340</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cramaten</family>
+      <pointsize>26</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: black;
+	font: 16pt &quot;Cramaten&quot;;
+	font: 20pt &quot;Cramaten&quot;;
+	font: 20pt &quot;Cramaten&quot;;
+	font: 26pt &quot;Cramaten&quot;;
+	border: 1px solid black;
+	border-radius: 5;
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 5
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup_keys</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="o">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>170</y>
+      <width>70</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: white;
+	font: 26pt &quot;Cramaten&quot;;
+	font: 26pt &quot;Cramaten&quot;;
+	border: 1px solid white;
+	border-radius: 5;
+	color: black;
+}
+
+QPushButton:pressed {
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 5
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup_keys</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="p">
+    <property name="geometry">
+     <rect>
+      <x>675</x>
+      <y>170</y>
+      <width>70</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: white;
+	font: 26pt &quot;Cramaten&quot;;
+	font: 26pt &quot;Cramaten&quot;;
+	border: 1px solid white;
+	border-radius: 5;
+	color: black;
+}
+
+QPushButton:pressed {
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 5
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup_keys</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="q">
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>167</y>
+      <width>40</width>
+      <height>340</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cramaten</family>
+      <pointsize>26</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: black;
+	font: 16pt &quot;Cramaten&quot;;
+	font: 20pt &quot;Cramaten&quot;;
+	font: 20pt &quot;Cramaten&quot;;
+	font: 26pt &quot;Cramaten&quot;;
+	border: 1px solid black;
+	border-radius: 5;
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 5
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup_keys</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="r">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>170</y>
+      <width>70</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: white;
+	font: 26pt &quot;Cramaten&quot;;
+	font: 26pt &quot;Cramaten&quot;;
+	border: 1px solid white;
+	border-radius: 5;
+	color: black;
+}
+
+QPushButton:pressed {
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 5
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup_keys</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="s">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>167</y>
+      <width>40</width>
+      <height>340</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cramaten</family>
+      <pointsize>26</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: black;
+	font: 16pt &quot;Cramaten&quot;;
+	font: 20pt &quot;Cramaten&quot;;
+	font: 20pt &quot;Cramaten&quot;;
+	font: 26pt &quot;Cramaten&quot;;
+	border: 1px solid black;
+	border-radius: 5;
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 5
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup_keys</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="t">
+    <property name="geometry">
+     <rect>
+      <x>825</x>
+      <y>170</y>
+      <width>70</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: white;
+	font: 26pt &quot;Cramaten&quot;;
+	font: 26pt &quot;Cramaten&quot;;
+	border: 1px solid white;
+	border-radius: 5;
+	color: black;
+}
+
+QPushButton:pressed {
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 5
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup_keys</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="u">
+    <property name="geometry">
+     <rect>
+      <x>900</x>
+      <y>170</y>
+      <width>70</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: white;
+	font: 26pt &quot;Cramaten&quot;;
+	font: 26pt &quot;Cramaten&quot;;
+	border: 1px solid white;
+	border-radius: 5;
+	color: black;
+}
+
+QPushButton:pressed {
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 5
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup_keys</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="v">
+    <property name="geometry">
+     <rect>
+      <x>950</x>
+      <y>167</y>
+      <width>40</width>
+      <height>340</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cramaten</family>
+      <pointsize>26</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: black;
+	font: 16pt &quot;Cramaten&quot;;
+	font: 20pt &quot;Cramaten&quot;;
+	font: 20pt &quot;Cramaten&quot;;
+	font: 26pt &quot;Cramaten&quot;;
+	border: 1px solid black;
+	border-radius: 5;
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 5
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup_keys</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="w">
+    <property name="geometry">
+     <rect>
+      <x>975</x>
+      <y>170</y>
+      <width>70</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: white;
+	font: 26pt &quot;Cramaten&quot;;
+	font: 26pt &quot;Cramaten&quot;;
+	border: 1px solid white;
+	border-radius: 5;
+	color: black;
+}
+
+QPushButton:pressed {
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 5
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup_keys</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="x">
+    <property name="geometry">
+     <rect>
+      <x>1030</x>
+      <y>167</y>
+      <width>40</width>
+      <height>340</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cramaten</family>
+      <pointsize>26</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: black;
+	font: 16pt &quot;Cramaten&quot;;
+	font: 20pt &quot;Cramaten&quot;;
+	font: 20pt &quot;Cramaten&quot;;
+	font: 26pt &quot;Cramaten&quot;;
+	border: 1px solid black;
+	border-radius: 5;
+	color: white;
+}
+
+QPushButton:pressed {
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 5
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup_keys</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="zzz">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>170</y>
+      <width>70</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;
+border: 1px solid white;
+border-radius: 5;
+color: black</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="zzz_2">
+    <property name="geometry">
+     <rect>
+      <x>6</x>
+      <y>-8</y>
+      <width>1071</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Rockwell</family>
+      <pointsize>28</pointsize>
+      <weight>50</weight>
+      <italic>true</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: black;
+font: italic 28pt &quot;Rockwell&quot;;
+color: white</string>
+    </property>
+    <property name="text">
+     <string>PyPianoQT - электронное фортепиано нового поколения</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <zorder>zzz</zorder>
+   <zorder>a</zorder>
+   <zorder>c</zorder>
+   <zorder>d</zorder>
+   <zorder>f</zorder>
+   <zorder>h</zorder>
+   <zorder>i</zorder>
+   <zorder>k</zorder>
+   <zorder>m</zorder>
+   <zorder>o</zorder>
+   <zorder>p</zorder>
+   <zorder>r</zorder>
+   <zorder>t</zorder>
+   <zorder>u</zorder>
+   <zorder>w</zorder>
+   <zorder>j</zorder>
+   <zorder>b</zorder>
+   <zorder>e</zorder>
+   <zorder>g</zorder>
+   <zorder>l</zorder>
+   <zorder>n</zorder>
+   <zorder>q</zorder>
+   <zorder>s</zorder>
+   <zorder>v</zorder>
+   <zorder>x</zorder>
+   <zorder>zzz_2</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1075</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: black;
+color: white;</string>
+   </property>
+   <widget class="QMenu" name="case_">
+    <property name="styleSheet">
+     <string notr="true">background-color: black;
+color: white;
+
+</string>
+    </property>
+    <property name="title">
+     <string>Регистр</string>
+    </property>
+    <addaction name="lower_"/>
+    <addaction name="middle_"/>
+    <addaction name="high_"/>
+   </widget>
+   <addaction name="case_"/>
+  </widget>
+  <action name="lower_">
+   <property name="text">
+    <string>Нижний</string>
+   </property>
+  </action>
+  <action name="middle_">
+   <property name="text">
+    <string>Средний</string>
+   </property>
+  </action>
+  <action name="high_">
+   <property name="text">
+    <string>Высокий</string>
+   </property>
+  </action>
+  <action name="action_4">
+   <property name="text">
+    <string>Русский</string>
+   </property>
+  </action>
+  <action name="action_5">
+   <property name="text">
+    <string>Английский</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup_keys"/>
+ </buttongroups>
+</ui>
