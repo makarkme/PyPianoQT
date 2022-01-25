@@ -1,9 +1,9 @@
 import sys
 import design
-from PyQt5.QtCore import Qt
-from PyQt5.QtMultimedia import QSound  # Для работы со звуком
-from multiprocessing import Process
-from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QLabel, QAction, QPlainTextEdit
+from PyQt5.QtCore import Qt, QUrl
+from PyQt5.QtMultimedia import QSound, QMediaPlayer, QMediaContent  # Для работы со звуком
+from threading import Thread
+from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QLabel, QAction
 import time
 
 
@@ -31,6 +31,7 @@ class PyPianoQt(design.Ui_MainWindow, QMainWindow):
         self.middle_.setCheckable(True)
         self.high_.triggered.connect(self.high_case)
         self.high_.setCheckable(True)
+        self.currentReq = None  # Текущий активный регистр
 
         # Словарь, где ключ - клавиша на клавиатуре, значение - порядковый номер (нужен для перебора).
         self.keyword = {Qt.Key_Q: 0, Qt.Key_W: 1, Qt.Key_E: 2, Qt.Key_R: 3, Qt.Key_T: 4, Qt.Key_Y: 5, Qt.Key_U: 6,
@@ -103,36 +104,24 @@ class PyPianoQt(design.Ui_MainWindow, QMainWindow):
             i.clicked.connect(sound.play)
             count += 1
 
-    # def play_input_data(self):
-    #     with open("input_data.txt", "r", encoding="utf-8") as file:
-    #         read_file = file.read().split(" ")
-    #
-    #         for index in range(len(read_file)):
-    #             sound = QSound(f"Sounds/{read_file[index]}.wav", self)
-
-    def actions(self, number):  # Костыльно, но с пивом потянет.
+    def actions(self, number):  # Тут мы смотрим есть ли какой-то активный регистр и если есть, то отключаем его,
+        # меняя при этом значение self.currentReq
         # Нужно, чтобы какой-то регистр всегда был активен, а все остальные при этом не активны.
         if number == 1:
-            if self.middle_.isChecked():  # Проверочка.
-                self.middle_.setChecked(False)
-            if self.high_.isChecked():
-                self.high_.setChecked(False)
-            if not self.lower_.isChecked():
-                self.lower_.setChecked(True)
+            if self.currentReq:
+                self.currentReq.setChecked(False)
+            self.lower_.setChecked(True)
+            self.currentReq = self.lower_
         elif number == 2:
-            if self.lower_.isChecked():
-                self.lower_.setChecked(False)
-            if self.high_.isChecked():
-                self.high_.setChecked(False)
-            if not self.middle_.isChecked():
-                self.middle_.setChecked(True)
+            if self.currentReq:
+                self.currentReq.setChecked(False)
+            self.middle_.setChecked(True)
+            self.currentReq = self.middle_
         elif number == 3:
-            if self.lower_.isChecked():
-                self.lower_.setChecked(False)
-            if self.middle_.isChecked():
-                self.middle_.setChecked(False)
-            if not self.high_.isChecked():
-                self.high_.setChecked(True)
+            if self.currentReq:
+                self.currentReq.setChecked(False)
+            self.high_.setChecked(True)
+            self.currentReq = self.high_
 
     def keyPressEvent(self, event):  # Подключаем клавиатуру.
         # Чтоб не вылетало при нажатии посторонних клавиш.
@@ -140,37 +129,27 @@ class PyPianoQt(design.Ui_MainWindow, QMainWindow):
             self.keyword[event.key()]
         except KeyError:
             return None
-        if self.lower_.isChecked():  # Проверочка.
-            # Тут мы прописываем путь к звуку, используя наш словарь со значениями в виде списков
-            # + звук записывается только при нажатой клавише. (значения словаря для клавиатуры)
-            sound = QSound(f"Sounds/{self.keys['lower'][self.keyword[event.key()]]}.wav", self)
-            sound.play()
-        elif self.middle_.isChecked():  # С остальными так же.
-            sound = QSound(f"Sounds/{self.keys['middle'][self.keyword[event.key()]]}.wav", self)
-            sound.play()
-        elif self.high_.isChecked():
-            sound = QSound(f"Sounds/{self.keys['high'][self.keyword[event.key()]]}.wav", self)
-            sound.play()
+        if self.currentReq:  # Проверочка.
+            self.buttonGroup_keys.buttons()[
+                self.keyword[event.key()]].animateClick()  # Тут мы нажимаем на кнопку, к которой привязана клавиша
 
     def about(self):  # Выводим нашу инструкцию.
         self.about_program.show()
 
     def play_thread(self):
-        t = Process(target=play, args=(self,))
-        t.run()
+        t = Thread(target=play_)
+        t.start()
 
 
 class AboutProgram(QWidget):  # Окно с инструкцией.
     def __init__(self):
         super().__init__()
 
-        self.info = QPlainTextEdit()  # Чтоб прочитать txt файл.
-        text = open('manual.txt', 'r', encoding='utf-8').read()
-
         self.setWindowTitle("Инструкция")  # Немного дизайна.
         self.setLayout(QVBoxLayout())
-        self.info = QLabel(self)
-        self.info.setText(text)  # Вставляем текст.
+        with open('manual.txt', 'r', encoding='utf-8') as file:
+            self.info = QLabel(file.read(), self)
+            file.close()
         self.layout().addWidget(self.info)
 
         self.setStyleSheet(  # Ещё дизайн.
@@ -180,20 +159,20 @@ class AboutProgram(QWidget):  # Окно с инструкцией.
         )
 
 
-def play(self):
-    file = open("input_data.txt", "r", encoding="utf-8")
-
-    data = file.read().split()
-    print(data)
+def play_():
+    player = QMediaPlayer()
+    player.setVolume(50)
+    with open("input_data.txt", "r", encoding="utf-8") as file:
+        data = file.read().split()
+        file.close()
     for i in range(len(data)):
-        print(data[i])
+        player.setMedia(QMediaContent(QUrl(f"Sounds/{data[i]}.wav")))
+        player.play()
         time.sleep(1)
-        # sound = QSound(f"Sounds/{data[i]}.wav", self)
-        # sound.play()
-        QSound.play(f"Sounds/{data[i]}.wav")
 
 
 if __name__ == "__main__":  # Пуск.
+    sys.excepthook = lambda type, value, tback: sys.__excepthook__(type, value, tback)
     app = QApplication(sys.argv)
     ex = PyPianoQt()
     ex.show()
